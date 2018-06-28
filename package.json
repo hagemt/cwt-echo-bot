@@ -1,0 +1,52 @@
+{
+  "name": "cwt-echo-bot",
+  "version": "0.0.0-mvp",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "boom": "7.2.0",
+    "bunyan": "1.8.12",
+    "ciscospark-webhook-validator": "1.0.0",
+    "co-body": "6.0.0",
+    "config": "1.30.0",
+    "http-shutdown": "1.2.0",
+    "koa-omnibus": "0.9.3",
+    "koa-router": "7.4.0",
+    "koa-static": "5.0.0",
+    "lodash": "4.17.10",
+    "node-fetch": "2.1.2"
+  },
+  "devDependencies": {
+    "eslint": "5.0.1",
+    "eslint-plugin-import": "2.13.0",
+    "eslint-plugin-mocha": "5.0.0",
+    "eslint-plugin-node": "6.0.1",
+    "mocha": "5.2.0",
+    "ngrok": "3.0.1",
+    "nodemon": "1.17.5",
+    "nyc": "12.0.2",
+    "serve": "9.1.0",
+    "supertest": "3.1.0"
+  },
+  "engines": {
+    "node": ">=8.2.0"
+  },
+  "scripts": {
+    "bot": "nodemon --config config/nodemon.json bot/server.js | bunyan",
+    "config": "node config",
+    "predocker": "docker build . -t cwt-echo-bot",
+    "docker": "docker run -d -p ${EXPOSE:-8080}:8080 cwt-echo-bot",
+    "postdocker": "docker logs -f $(docker ps -lq)",
+    "precoverage": "nyc -- mocha",
+    "coverage": "nyc report --reporter html",
+    "postcoverage": "nyc check-coverage --lines 0",
+    "eslint": "eslint bot config test",
+    "mocha": "mocha test/**/*.spec.js",
+    "prereport": "npm run eslint -- --fix",
+    "report": "npm run coverage",
+    "postreport": "npm run eslint -- --max-warnings 0",
+    "server": "nodemon --config config/nodemon.json test/server.js | bunyan",
+    "start": "npm run server",
+    "test": "npm run report"
+  }
+}
