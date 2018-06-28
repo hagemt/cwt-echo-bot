@@ -1,11 +1,15 @@
 const http = require('http')
 
+const Boom = require('boom')
 const Bunyan = require('bunyan')
 const config = require('config')
 const KoaRouter = require('koa-router')
 const httpShutdown = require('http-shutdown')
 const koaOmnibus = require('koa-omnibus')
+const parse = require('co-body')
 const _ = require('lodash')
+
+const events = require('./events.js')
 
 const createRouter = () => {
 	const router = new KoaRouter({
@@ -28,8 +32,25 @@ const createRouter = () => {
 		}
 		response.body = pong
 	})
-	router.post('/echo', async ({ response }) => {
-		response.status = 204
+	router.post('/echo', async ({ omnibus, request, response }) => {
+		try {
+			request.body = await parse.json(request, {
+				returnRawBody: true,
+			})
+			const logger = omnibus.log.child({
+				body: request.body.parsed,
+			})
+			events.emit('event', {
+				bot: events,
+				log: logger,
+				req: request,
+				res: response,
+			})
+			response.status = 204 // No Content
+		} catch (error) {
+			omnibus.log.warn({ err: error }, 'will return 400')
+			throw Boom.badRequest(error.message)
+		}
 	})
 	return router
 }

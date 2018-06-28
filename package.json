@@ -47,6 +47,7 @@
     "postreport": "npm run eslint -- --max-warnings 0",
     "server": "nodemon --config config/nodemon.json test/server.js | bunyan",
     "start": "npm run server",
-    "test": "npm run report"
+    "test": "npm run report",
+    "tunnel": "node bot/webhooks.js"
   }
 }
