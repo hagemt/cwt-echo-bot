@@ -134,6 +134,7 @@ if (!module.parent) {
 	const test = process.env.NODE_ENV === 'test'
 	testServer(port, test ? requestHandler : null)
 		.then(({ createdWebhooks: [webhook], server }) => {
+			console.log('ngrok web interface: http://localhost:4040/inspect/http')
 			console.log(`${webhook.targetUrl} => ${webhook.name}:${port}`)
 			server.on('error', (error) => {
 				console.error(error)
