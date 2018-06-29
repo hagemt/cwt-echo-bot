@@ -40,12 +40,7 @@ const createRouter = () => {
 			const logger = omnibus.log.child({
 				body: request.body.parsed,
 			})
-			events.emit('event', {
-				bot: events,
-				log: logger,
-				req: request,
-				res: response,
-			})
+			events.emit('event', request, logger)
 			response.status = 204 // No Content
 		} catch (error) {
 			omnibus.log.warn({ err: error }, 'will return 400')
@@ -77,6 +72,19 @@ const listenServer = async (port) => {
 	const log = createLogger()
 	const application = koaOmnibus.createApplication({
 		targetLogger: (options, context, fields) => log.child(fields),
+	})
+	application.use(async ({ req, request, response }, next) => {
+		request.status = `${req.method} ${req.url} HTTP/${req.httpVersion}`
+		await next()
+		switch (response.status) {
+		case 404:
+			throw Boom.notFound(request.status)
+		case 405:
+			throw Boom.methodNotAllowed(request.status)
+		case 501:
+			throw Boom.notImplemented(request.status)
+		default:
+		}
 	})
 	for (const router of [createRouter()]) {
 		application.use(router.allowedMethods())
