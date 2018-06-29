@@ -1,5 +1,5 @@
 module.exports = {
 	logger: {
-		level: 'info',
+		level: 'debug',
 	},
 }

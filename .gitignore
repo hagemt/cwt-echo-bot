@@ -1,4 +1,5 @@
 /.nyc_output
+/config/local*
 /config/token.json
 /coverage
 /node_modules
