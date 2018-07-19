@@ -8,7 +8,7 @@ Copy the (double quoted) token string to file named `token.json` e.g. `"SECRET_B
 
 Clone this repository with `git` and drop `token.json` into the `config` directory, then follow the instructions below:
 
-## Setup
+## Walkthrough
 
 Last week, we created a Cisco Webex Teams bot application using the dev portal. (developer.webex.com)
 
