@@ -20,7 +20,7 @@ Last week, we created a Cisco Webex Teams bot application using the dev portal. 
 5. Notice how `npm start` executes the `server` script by default? (simple test server)
 6. Examine the contents of the `bot` folder and the provided script. Can you run that?
 7. Why isn't your bot responding to messages yet? Try `npm run tunnel` for `ngrok`.
-8. Can you modify your bot to echo back the message that caused webhook delivery?
+8. Can you modify your bot to reply with a different message than you sent it?
 9. What will you make your bot do? Will you add an API, or a React front-end?
 
 File issues (we also accept PRs) if you run into any problems. Feedback is much appreciated!
