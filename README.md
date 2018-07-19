@@ -1,6 +1,12 @@
 # cwt-echo-bot
 
-Demo-ware: make a bot that posts back when you send it a DM.
+This is demo-ware: make a bot that posts back when you send it a DM. (but does not reply to its own message ad infinitum)
+
+To get started, create your bot here: https://developer.webex.com/add-app.html (other application types are out of scope)
+
+Copy the (double quoted) token string to file named `token.json` e.g. `"BOT_ACCESS_TOKEN_FROM_DEV_PORTAL_RANDOM_SECRET"`
+
+Clone this repository with `git` and drop `token.json` into the `config` directory, then follow the instructions below:
 
 ## 2018-06-28
 
