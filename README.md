@@ -10,7 +10,7 @@ Events are handled without blocking other HTTP traffic (actions are processed as
 
 ## Getting Started
 
-Upfront: we expect you have installed a modern [NodeJS](https://nodejs.org) as well as a functional `docker` and `git`.
+Upfront: we expect you have installed a modern [NodeJS](https://nodejs.org) as well as functional `docker` and `git` commands.
 
 To get started, create your bot here: https://developer.webex.com/add-app.html (other application types: out of scope)
 
