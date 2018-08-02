@@ -2,9 +2,9 @@
 
 You: resourceful business collaboration dev/enabler; if you like this, you might also like [cisco-webex-tools](https://www.npmjs.com/package/cisco-webex-tools).
 
-This bot is a template--it posts back when messaged. (ignores non-humans, and can only respond in groups when @mentioned)
+This bot is a template--it posts back when messaged. (ignores non-humans, can only respond in groups when @mentioned)
 
-When triggered (by webhook delivery = POST to target URL) an `event` action is fired, passing along relevant JSON `data`.
+When triggered (by webhook delivery = POST to target URL) an `event` action is fired, passing relevant JSON `data`.
 
 Events are handled without blocking other HTTP traffic (actions are processed asynchronously) to enable initial scale-up.
 
