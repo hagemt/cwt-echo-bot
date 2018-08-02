@@ -44,7 +44,7 @@ Note: use [Kinematic](https://kitematic.com) and/or [Github Desktop](https://des
 
 You might prefer an IDE, but NodeJS makes it simple enough to write JavaScript with any editor, even ones like `vim`.
 
-To send HTTP requests, use your web browser (for simple GETs) or Postman or e.g. `curl -s http://localhost:8080/ -v`.
+To send HTTP requests, use your web browser (for simple GETs) or Postman or e.g. `curl -v http://localhost:8080/`.
 
 ### Basic Docker
 
