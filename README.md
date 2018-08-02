@@ -6,7 +6,7 @@ This bot is a template--it responds when DM'd. (ignores non-humans, can only res
 
 When triggered (by webhook delivery = POST to target URL) an `event` action is fired, passing relevant JSON `data`.
 
-Events are handled without blocking other HTTP traffic (actions are processed asynchronously) to enable initial scale-up.
+Events are handled without blocking other HTTP traffic (actions are processed asynchronously) to enable scale-up.
 
 ## Getting Started
 
@@ -36,7 +36,7 @@ By default, `docker` will create a lightweight container running the `start` scr
 8. Can you modify your bot to reply with a different message, or do something else?
 9. What will you make your bot do? Will you add an API, or a React front-end?
 
-File issues (we also accept PRs) if you run into any problems. Feedback is much appreciated!
+Create an issue on GitHub (we also accept PRs) if you run into any problems. Your feedback is much appreciated!
 
 ## Tooling Primer
 
