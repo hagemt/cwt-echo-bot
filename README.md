@@ -50,6 +50,6 @@ To send HTTP requests, use your web browser (for simple GETs) or Postman or e.g.
 
 From the command line, use `docker ps -a` to list all your local containers, then `docker stop ...` and `docker rm ...`.
 
-The included `Dockerfile` is simple enough for beginners, but robust enough for a (basic) production NodeJS application.
+The included `Dockerfile` is simple enough for beginners, but robust enough for a (basic) production application.
 
-If you find yourself adding a database or multiple services, you might want to explore e.g. `docker-compose`, Swarm, etc.
+If you add databases or other services, you might want to explore tools like e.g. `docker-compose`, Swarm, etc.
